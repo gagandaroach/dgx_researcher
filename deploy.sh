@@ -5,4 +5,4 @@
 
 docker build . -t dgx_researcher
 
-nvidia-docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 -it --rm -v /data:/srv/data -v ~:/srv/hosthome -it -v /raid:/srv/raid nvcr.io/nvidia/tensorflow:19.07-py3
+nvidia-docker run --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 -it --rm -v /data:/srv/data -v ~:/srv/hosthome -it -v /raid:/srv/raid dgx_researcher
