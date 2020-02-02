@@ -12,3 +12,4 @@ RUN apt-get install libvips-dev libvips-tools -y
 RUN apt-get install python3 python3-pip -y
 RUN apt-get install python3-opencv -y
 
+RUN python3 -m pip install pyvips
