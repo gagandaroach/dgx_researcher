@@ -5,6 +5,7 @@
 # * Python3
 # * PyVIPS
 # * OpenCV
+# * HistomicsTK WSI Library
 
 FROM nvcr.io/nvidia/tensorflow:19.07-py3
 # set timezone for tzdata update
@@ -22,3 +23,11 @@ RUN apt-get install python3 python3-pip -y
 RUN apt-get install python3-opencv -y
 # install vips python bindings
 RUN python3 -m pip install pyvips
+# install histomicstk
+WORKDIR /tmp
+RUN git clone https://github.com/DigitalSlideArchive/HistomicsTK.git
+WORKDIR /tmp/HistomicsTK
+RUN python3 -m pip install scikit-build
+RUN python3 -m pip install large_image
+RUN apt-get install cmake cython -y
+RUN python3 -m pip install -e .
