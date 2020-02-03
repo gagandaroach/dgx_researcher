@@ -31,3 +31,5 @@ RUN python3 -m pip install scikit-build
 RUN python3 -m pip install large_image
 RUN apt-get install cmake cython -y
 RUN python3 -m pip install -e .
+
+WORKDIR /srv
