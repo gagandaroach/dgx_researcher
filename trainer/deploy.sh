@@ -9,6 +9,6 @@ container_name="${user}_researcher"
 docker stop $container_name
 docker rm $container_name
 # build docker container
-docker build . -t dgx_researcher
+docker build . -t $container_name:latest
 
-nvidia-docker run --name $container_name --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 -it --rm -v /data:/srv/data -v ~:/srv/hosthome -it -v /raid:/srv/raid dgx_researcher
+nvidia-docker run --name $container_name --shm-size=1g --ulimit memlock=-1 --ulimit stack=67108864 -it -v /data:/srv/data -v ~:/srv/hosthome -v /raid:/srv/raid $container_name
