@@ -34,6 +34,5 @@ RUN python3 -m pip install large_image
 RUN apt install cmake cython -y
 RUN python3 -m pip install -e .
 
-WORKDIR /srv
-
+WORKDIR /host
 RUN rm -rf /tmp
